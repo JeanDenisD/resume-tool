@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-Denis DRANE - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #f59e0b;
+            --accent-light: #fef3c7;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 20px 25px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .photo-container {
+            flex-shrink: 0;
+        }
+
+        .photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            object-position: center 10%;
+        }
+
+        .header-info {
+            flex: 1;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .title {
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 11px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            width: 14px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-row-inline {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Main Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+        }
+
+        /* Left Column */
+        .left-column {
+            padding: 18px 22px;
+        }
+
+        /* Right Column */
+        .right-column {
+            background: var(--gray-50);
+            padding: 18px 16px;
+            border-left: 1px solid var(--gray-200);
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 11px;
+            line-height: 1.5;
+            color: var(--gray-700);
+            text-align: justify;
+        }
+
+        .summary strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        /* Experience Items */
+        .experience-item {
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .experience-header {
+            margin-bottom: 4px;
+        }
+
+        .company {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .date {
+            font-size: 10px;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .mission {
+            font-size: 10px;
+            color: var(--gray-700);
+            margin: 4px 0;
+            background: var(--gray-50);
+            padding: 5px 8px;
+            border-radius: 4px;
+            line-height: 1.4;
+        }
+
+        .mission strong {
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        .exp-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exp-list > li {
+            font-size: 10px;
+            color: var(--gray-700);
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 2px;
+            line-height: 1.4;
+        }
+
+        .exp-list > li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .exp-list > li > strong {
+            color: var(--gray-900);
+        }
+
+        /* Sub-lists */
+        .sub-list {
+            list-style: none;
+            padding: 0;
+            margin: 2px 0 2px 12px;
+        }
+
+        .sub-list > li {
+            font-size: 9.5px;
+            color: var(--gray-700);
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 1px;
+            line-height: 1.35;
+        }
+
+        .sub-list > li::before {
+            content: '○';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 7px;
+            color: var(--gray-600);
+        }
+
+        /* Category headers in lists */
+        .list-category {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 4px;
+            margin-bottom: 2px;
+        }
+
+        /* Right Column Sections */
+        .right-section {
+            margin-bottom: 18px;
+        }
+
+        .right-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* Skills with progress bars */
+        .skill-item {
+            margin-bottom: 10px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .skill-name {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .skill-percent {
+            font-size: 8px;
+            color: var(--gray-500);
+        }
+
+        .skill-detail {
+            font-size: 8px;
+            color: var(--gray-500);
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 3px;
+            overflow: hidden;
+            border: 1px solid var(--gray-600);
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 3px;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 10px;
+            padding-left: 8px;
+            border-left: 2px solid var(--gray-200);
+        }
+
+        .education-year {
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .education-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-900);
+            line-height: 1.3;
+        }
+
+        .education-school {
+            font-size: 9px;
+            color: var(--gray-600);
+            font-style: italic;
+        }
+
+        /* Interests */
+        .interest-item {
+            font-size: 10px;
+            color: var(--gray-700);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .interest-item i {
+            color: var(--primary);
+            font-size: 9px;
+            width: 12px;
+        }
+
+        /* Editable elements */
+        [contenteditable="true"] {
+            outline: none;
+            transition: background-color 0.2s ease;
+            border-radius: 3px;
+        }
+
+        [contenteditable="true"]:hover {
+            background-color: rgba(37, 99, 235, 0.08);
+        }
+
+        [contenteditable="true"]:focus {
+            background-color: rgba(37, 99, 235, 0.12);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Toolbar */
+        .edit-toolbar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+
+        .toolbar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .toolbar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .toolbar-section-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .color-picker-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-picker-row label {
+            font-size: 10px;
+            color: var(--gray-700);
+            flex: 1;
+        }
+
+        .color-picker-row input[type="color"] {
+            width: 30px;
+            height: 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .slider-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slider-row label {
+            font-size: 10px;
+            color: var(--gray-700);
+            min-width: 55px;
+        }
+
+        .slider-row input[type="range"] {
+            flex: 1;
+            height: 5px;
+            cursor: pointer;
+        }
+
+        .slider-row span {
+            font-size: 10px;
+            color: var(--gray-600);
+            min-width: 28px;
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            flex: 1;
+            padding: 6px 12px;
+            border: 2px solid var(--gray-200);
+            background: white;
+            color: var(--gray-600);
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .font-size-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .font-btn {
+            width: 28px;
+            height: 28px;
+            border: 2px solid var(--gray-200);
+            background: white;
+            color: var(--gray-600);
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            transition: all 0.2s;
+            padding: 0;
+        }
+
+        .font-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        #font-size-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-700);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .print-btn {
+            width: 100%;
+            background: #7c3aed !important;
+            padding: 10px 15px !important;
+            font-size: 12px !important;
+        }
+
+        .print-btn:hover {
+            background: #6d28d9 !important;
+        }
+
+        .photo-btn {
+            width: 100%;
+            background: #0891b2 !important;
+            padding: 8px 12px !important;
+        }
+
+        .photo-btn:hover {
+            background: #0e7490 !important;
+        }
+
+        #profile-select {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid var(--gray-200);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        .profile-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .profile-btn {
+            flex: 1;
+            padding: 6px 10px !important;
+            font-size: 11px !important;
+        }
+
+        .save-profile-btn {
+            background: #0891b2 !important;
+        }
+
+        .save-profile-btn:hover {
+            background: #0e7490 !important;
+        }
+
+        .delete-profile-btn {
+            flex: 0 0 auto !important;
+            background: #dc2626 !important;
+            padding: 6px 10px !important;
+        }
+
+        .delete-profile-btn:hover {
+            background: #b91c1c !important;
+        }
+
+        .backup-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .backup-btn {
+            flex: 1;
+            padding: 6px 10px !important;
+            font-size: 10px !important;
+        }
+
+        .export-btn {
+            background: #7c3aed !important;
+        }
+
+        .export-btn:hover {
+            background: #6d28d9 !important;
+        }
+
+        .import-btn {
+            background: #059669 !important;
+        }
+
+        .import-btn:hover {
+            background: #047857 !important;
+        }
+
+
+        .edit-toolbar button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .edit-toolbar button:hover {
+            background: var(--primary-dark);
+        }
+
+        .edit-toolbar button.reset-btn {
+            background: #dc2626;
+        }
+
+        .edit-toolbar button.reset-btn:hover {
+            background: #b91c1c;
+        }
+
+        .edit-toolbar button.add-btn {
+            background: #16a34a;
+        }
+
+        .edit-toolbar button.add-btn:hover {
+            background: #15803d;
+        }
+
+        .save-indicator {
+            color: #16a34a;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .save-indicator.visible {
+            opacity: 1;
+        }
+
+        /* Add/Delete buttons */
+        .item-controls {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .editable-item {
+            position: relative;
+        }
+
+        .editable-item:hover .item-controls {
+            opacity: 1;
+        }
+
+        .delete-btn {
+            background: #dc2626;
+            color: white;
+            border: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            font-size: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .delete-btn:hover {
+            background: #b91c1c;
+        }
+
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .edit-toolbar,
+            .item-controls {
+                display: none !important;
+            }
+            .left-column {
+                zoom: 1 !important;
+            }
+            [contenteditable="true"]:hover,
+            [contenteditable="true"]:focus {
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="photo-container">
+                <img src="Jean-Denis Noir et blanc.jpg" alt="Jean-Denis DRANE" class="photo">
+            </div>
+            <div class="header-info">
+                <h1 class="name" contenteditable="true">Jean-Denis DRANE</h1>
+                <p class="title" contenteditable="true">Business Analyst & Project Management</p>
+            </div>
+            <div class="contact-section">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:jeandenis@onscopeconsulting.com">jeandenis@onscopeconsulting.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>06 21 34 51 95</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>
+                    <span>Choisy-le-Roi (94)</span>
+                </div>
+                <div class="contact-row-inline">
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/jeandenis-drane" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/JeanDenisD" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Summary -->
+                <section class="section">
+                    <p class="summary" contenteditable="true">
+                        <strong>International Business Analyst Expert</strong> with <strong>4 years</strong> of experience in the banking sector, specializing in <strong>payments</strong> and <strong>regulatory compliance</strong>.
+                        <br><br>
+                        Strong expertise in <strong>project management, functional analysis, and delivery within compliance-driven environments.</strong> Experienced in <strong>ISO 20022, CBPR+, SEPA, and SWIFT</strong> transformations. Now expanding expertise toward card delivery and scheme compliance topics.
+                    </p>
+                </section>
+
+                <!-- Work Experience -->
+                <section class="section">
+                    <h2 class="section-title">Work Experience</h2>
+
+                    <!-- ING CBPR+ -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company" contenteditable="true">ING WHOLESALE BANKING | CBPR+ Program Project Manager</div>
+                            <div class="date" contenteditable="true">September 2022 – March 2025 (2 years et 6 months)</div>
+                        </div>
+                        <p class="mission"><strong>Main Mission:</strong> Support ING Bank France (Wholesale) on ISO20022 migration, Structured address and SEPA Rulebook 2023 updates. Coordinated end-to-end project delivery with Product Owners, IT, Compliance, and Operations teams</p>
+
+                        <ul class="exp-list">
+                            <li><strong>Project management:</strong>
+                                <ul class="sub-list">
+                                    <li>CBPR+: SWIFT FIN to XML - SWIFT migration stream, ensuring compliance and delivery alignment.</li>
+                                    <li>SEPA Rulebook 2023: structured address system processing</li>
+                                    <li>RACI, PERT, Agile, GANTT method proficient on IT projects</li>
+                                    <li>Drafting specifications and operational procedures</li>
+                                </ul>
+                            </li>
+                            <li><strong>Project management tools:</strong>
+                                <ul class="sub-list">
+                                    <li>Azure, SNOW</li>
+                                </ul>
+                            </li>
+                            <li><strong>Clearing systems:</strong>
+                                <ul class="sub-list">
+                                    <li>SEPA (STET2, STEP2, EBA, TIPS)</li>
+                                    <li>Target2 (protocole RTGS, SWIFT MT/ISO)</li>
+                                    <li>Système CRM et moteurs de paiement (SAB, Intellimatch, RTPE, FCRM, FIRCOSOFT)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="list-category">Other projects:</div>
+                        <ul class="exp-list">
+                            <li><strong>Regulatory:</strong>
+                                <ul class="sub-list">
+                                    <li>FICOBA 3: AML directive Migration from txt to xml</li>
+                                    <li>BDF OSCAMPS automation: Quarterly (OCT) and Semester (OCA) customers payment declaration modeling from manual (Excel/PowerPivot) to automation (Datalake global/SQL based)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Payment:</strong>
+                                <ul class="sub-list">
+                                    <li>Instant Payment implementation</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ING Payment Analyst -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">ING WHOLESALE BANKING | Analyste et Gestionnaire de Paiements</div>
+                            <div class="date">Oct. 2020 – March 2022 (1 year et 6 months)</div>
+                        </div>
+                        <p class="mission"><strong>Main Mission:</strong> Payment execution and reconciliation management<br>BDF OSCAMPS - 3 Billion EUR flows annually</p>
+
+                        <ul class="exp-list">
+                            <li>Managed domestic and international payment execution and reconciliation (SEPA, SWIFT, Target2).</li>
+                            <li>Delivered operational support ensuring compliance with scheme and group payment policies.</li>
+                            <li>Business Analysis and statistics (SEPA SDD, SEP SCT, SWIFT, Target2, cheque, Bills of Exchange and Cash Pooling)</li>
+                            <li><strong>OPS Tooling:</strong>
+                                <ul class="sub-list">
+                                    <li>Process optimisation and automation via Excel VBA macros</li>
+                                    <li>FX Conversion using Bloomberg-linked formulas</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Complementary AI Training -->
+                <section class="section">
+                    <h2 class="section-title">Complementary AI Training</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">IronHack | AI Engineering Bootcamp</div>
+                            <div class="date">May 2025 – July 2025</div>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Fine-tuning of open-source models (LoRA, QLoRA)</li>
+                            <li>RAG pipelines with LangChain, ChromaDB, Pinecone</li>
+                            <li>Speech recognition (Whisper) and text-to-speech (OpenVoice)</li>
+                            <li>Development of a multimodal voice assistant (Gradio, FastAPI, Docker)</li>
+                            <li>Model training, deployment, and evaluation on GPU (RunPod, HF Spaces)</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Education -->
+                <div class="right-section">
+                    <h3 class="right-section-title">Education</h3>
+
+                    <div class="education-item">
+                        <div class="education-year">2025</div>
+                        <div class="education-title">AI Engineering Bootcamp training course</div>
+                        <div class="education-school">Ironhack</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2022</div>
+                        <div class="education-title">ISO 20022/CBPR+ SWIFT Training course - International Payments</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2022</div>
+                        <div class="education-title">Full Stack Web Development Bootcamp Training Course</div>
+                        <div class="education-school">Ironhack</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2020</div>
+                        <div class="education-title">Data Analysis Bootcamp training course</div>
+                        <div class="education-school">Ironhack Paris</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2015</div>
+                        <div class="education-title">MBA Supply Chain & Purchasing Management</div>
+                        <div class="education-school">POLE ESG Paris</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2011</div>
+                        <div class="education-title">Bachelor's in Hospitality & Restaurant Management</div>
+                        <div class="education-school">University of Évry Paris-Saclay</div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="right-section">
+                    <h3 class="right-section-title">Skills</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">French native</div>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 100%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">English</div>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">ISO 20022 & Payments</div>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Functional & Business Analysis</div>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Automation</div>
+                        </div>
+                        <div class="skill-detail">Power BI & Excel VBA, n8n</div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">AI & Programming</div>
+                        </div>
+                        <div class="skill-detail">Python, LangChain, VBA, SQL, JS, ML, Prompt Engineering</div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Interests -->
+                <div class="right-section">
+                    <h3 class="right-section-title">Interests</h3>
+                    <div class="interest-item">
+                        <i class="fas fa-microchip"></i>
+                        <span>Technology, AI</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-person-running"></i>
+                        <span>Sport > 20 years of Capoëira</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Cooking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Toolbar -->
+    <div class="edit-toolbar">
+        <div class="toolbar-header">
+            <span class="save-indicator"><i class="fas fa-check"></i> Sauvegardé</span>
+            <button class="reset-btn" onclick="resetCV()"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Profils CV</div>
+            <select id="profile-select" onchange="loadProfile(this.value)">
+                <option value="">-- Sélectionner --</option>
+            </select>
+            <div class="profile-buttons">
+                <button class="profile-btn save-profile-btn" onclick="saveNewProfile()"><i class="fas fa-save"></i> Sauver</button>
+                <button class="profile-btn delete-profile-btn" onclick="deleteProfile()"><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Photo</div>
+            <input type="file" id="photo-input" accept="image/*" onchange="changePhoto(this)" style="display: none;">
+            <button class="photo-btn" onclick="document.getElementById('photo-input').click()"><i class="fas fa-camera"></i> Changer la photo</button>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Langue</div>
+            <div class="language-toggle">
+                <button id="lang-en" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                <button id="lang-fr" class="lang-btn" onclick="switchLanguage('fr')">FR</button>
+            </div>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Couleurs</div>
+            <div class="color-picker-row">
+                <label>Principal (bleu)</label>
+                <input type="color" id="color-primary" value="#2563eb" onchange="updateColor('primary', this.value)">
+            </div>
+            <div class="color-picker-row">
+                <label>Accent (jaune)</label>
+                <input type="color" id="color-accent" value="#f59e0b" onchange="updateColor('accent', this.value)">
+            </div>
+            <div class="color-picker-row">
+                <label>Titres sections</label>
+                <input type="color" id="color-section-title" value="#2563eb" onchange="updateColor('section-title', this.value)">
+            </div>
+            <div class="color-picker-row">
+                <label>Dates</label>
+                <input type="color" id="color-dates" value="#4b5563" onchange="updateColor('dates', this.value)">
+            </div>
+            <div class="color-picker-row">
+                <label>Icônes header</label>
+                <input type="color" id="color-header-icons" value="#f59e0b" onchange="updateColor('header-icons', this.value)">
+            </div>
+            <div class="color-picker-row">
+                <label>Bordures barres</label>
+                <input type="color" id="color-skill-border" value="#4b5563" onchange="updateColor('skill-border', this.value)">
+            </div>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Barres progression</div>
+            <div class="slider-row">
+                <label>Épaisseur</label>
+                <input type="range" id="skill-bar-height" min="4" max="12" value="6" onchange="updateSkillBarHeight(this.value)">
+                <span id="skill-bar-height-value">6px</span>
+            </div>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Taille texte (principal)</div>
+            <div class="font-size-controls">
+                <button class="font-btn" onclick="adjustFontSize(-1)"><i class="fas fa-minus"></i></button>
+                <span id="font-size-value">100%</span>
+                <button class="font-btn" onclick="adjustFontSize(1)"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Ajouter</div>
+            <button class="add-btn" onclick="addExperience()"><i class="fas fa-plus"></i> Expérience</button>
+            <button class="add-btn" onclick="addTraining()"><i class="fas fa-plus"></i> Formation AI</button>
+            <button class="add-btn" onclick="addEducation()"><i class="fas fa-plus"></i> Éducation</button>
+            <button class="add-btn" onclick="addSkill()"><i class="fas fa-plus"></i> Skill</button>
+            <button class="add-btn" onclick="addInterest()"><i class="fas fa-plus"></i> Intérêt</button>
+        </div>
+        <div class="toolbar-section">
+            <div class="toolbar-section-title">Backup</div>
+            <div class="backup-buttons">
+                <button class="backup-btn export-btn" onclick="exportProfiles()"><i class="fas fa-download"></i> Export</button>
+                <button class="backup-btn import-btn" onclick="document.getElementById('import-file').click()"><i class="fas fa-upload"></i> Import</button>
+                <input type="file" id="import-file" accept=".json" onchange="importProfiles(this)" style="display: none;">
+            </div>
+        </div>
+        <div class="toolbar-section">
+            <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Imprimer / PDF</button>
+        </div>
+    </div>
+
+    <script>
+        // Translations
+        const translations = {
+            en: {
+                workExperience: 'Work Experience',
+                complementaryAiTraining: 'Complementary AI Training',
+                education: 'Education',
+                skills: 'Skills',
+                interests: 'Interests',
+                mainMission: 'Main Mission',
+                otherProjects: 'Other projects:',
+                projectManagement: 'Project management:',
+                projectManagementTools: 'Project management tools:',
+                clearingSystems: 'Clearing systems:',
+                regulatory: 'Regulatory:',
+                payment: 'Payment:',
+                opsTooling: 'OPS Tooling:',
+                frenchNative: 'French native',
+                english: 'English'
+            },
+            fr: {
+                workExperience: 'Expérience Professionnelle',
+                complementaryAiTraining: 'Formation Complémentaire IA',
+                education: 'Formation',
+                skills: 'Compétences',
+                interests: 'Centres d\'intérêt',
+                mainMission: 'Mission Principale',
+                otherProjects: 'Autres projets :',
+                projectManagement: 'Gestion de projet :',
+                projectManagementTools: 'Outils de gestion de projet :',
+                clearingSystems: 'Systèmes de compensation :',
+                regulatory: 'Réglementaire :',
+                payment: 'Paiement :',
+                opsTooling: 'Outils OPS :',
+                frenchNative: 'Français natif',
+                english: 'Anglais'
+            }
+        };
+
+        let currentLanguage = 'en';
+        let currentFontScale = 100; // percentage
+
+        // Elements to make editable (CSS selectors)
+        const editableSelectors = [
+            '.name', '.title', '.summary',
+            '.company', '.date', '.mission',
+            '.exp-list > li', '.sub-list > li',
+            '.list-category',
+            '.section-title', '.right-section-title',
+            '.education-year', '.education-title', '.education-school',
+            '.skill-name', '.skill-detail',
+            '.interest-item span'
+        ];
+
+        // Store original content for reset
+        let originalContent = '';
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Save original content (before any modifications)
+            const savedContent = localStorage.getItem('cv-content');
+            if (!localStorage.getItem('cv-original')) {
+                localStorage.setItem('cv-original', document.querySelector('.cv-container').innerHTML);
+            }
+            originalContent = localStorage.getItem('cv-original');
+
+            // Load saved content if exists
+            if (savedContent) {
+                document.querySelector('.cv-container').innerHTML = savedContent;
+            }
+
+            // Initialize editing features
+            initializeEditing();
+
+            // Load saved colors
+            loadColors();
+
+            // Load language preference
+            loadLanguage();
+
+            // Load font scale
+            loadFontScale();
+
+            // Load skill bar height
+            loadSkillBarHeight();
+
+            // Load photo
+            loadPhoto();
+
+            // Load profile list
+            loadProfileList();
+
+            // Save on input with debounce
+            let saveTimeout;
+            document.querySelector('.cv-container').addEventListener('input', function() {
+                clearTimeout(saveTimeout);
+                saveTimeout = setTimeout(saveCV, 500);
+            });
+        });
+
+        // Initialize all editing features
+        function initializeEditing() {
+            // Clean up old add buttons from previous version (if any in localStorage)
+            document.querySelectorAll('.section-add-btns').forEach(el => el.remove());
+
+            // Make elements editable
+            editableSelectors.forEach(selector => {
+                document.querySelectorAll(selector).forEach(el => {
+                    el.setAttribute('contenteditable', 'true');
+                });
+            });
+
+            // Add delete buttons to deletable items
+            addDeleteButtons();
+        }
+
+        // Add delete buttons to items
+        function addDeleteButtons() {
+            // Interest items
+            document.querySelectorAll('.interest-item').forEach(item => {
+                if (!item.querySelector('.item-controls')) {
+                    item.classList.add('editable-item');
+                    const controls = document.createElement('div');
+                    controls.className = 'item-controls';
+                    controls.innerHTML = '<button class="delete-btn" onclick="deleteItem(this)">×</button>';
+                    item.appendChild(controls);
+                }
+            });
+
+            // Education items
+            document.querySelectorAll('.education-item').forEach(item => {
+                if (!item.querySelector('.item-controls')) {
+                    item.classList.add('editable-item');
+                    const controls = document.createElement('div');
+                    controls.className = 'item-controls';
+                    controls.innerHTML = '<button class="delete-btn" onclick="deleteItem(this)">×</button>';
+                    item.appendChild(controls);
+                }
+            });
+
+            // Skill items
+            document.querySelectorAll('.skill-item').forEach(item => {
+                if (!item.querySelector('.item-controls')) {
+                    item.classList.add('editable-item');
+                    const controls = document.createElement('div');
+                    controls.className = 'item-controls';
+                    controls.innerHTML = '<button class="delete-btn" onclick="deleteItem(this)">×</button>';
+                    item.appendChild(controls);
+                }
+            });
+
+            // List items (exp-list)
+            document.querySelectorAll('.exp-list > li').forEach(item => {
+                if (!item.querySelector('.item-controls')) {
+                    item.classList.add('editable-item');
+                    const controls = document.createElement('div');
+                    controls.className = 'item-controls';
+                    controls.innerHTML = '<button class="delete-btn" onclick="deleteItem(this)">×</button>';
+                    item.appendChild(controls);
+                }
+            });
+        }
+
+        // Delete an item
+        function deleteItem(btn) {
+            const item = btn.closest('.editable-item');
+            if (confirm('Supprimer cet élément ?')) {
+                item.remove();
+                saveCV();
+            }
+        }
+
+        // Add new experience
+        function addExperience() {
+            const section = document.querySelector('.section:has(.experience-item)');
+            const lastExp = section.querySelector('.experience-item:last-of-type');
+            const newItem = document.createElement('div');
+            newItem.className = 'experience-item editable-item';
+            newItem.innerHTML = `
+                <div class="experience-header">
+                    <div class="company" contenteditable="true">ENTREPRISE | Poste</div>
+                    <div class="date" contenteditable="true">Date début – Date fin</div>
+                </div>
+                <p class="mission" contenteditable="true"><strong>Main Mission:</strong> Description de la mission</p>
+                <ul class="exp-list">
+                    <li contenteditable="true" class="editable-item">Première responsabilité
+                        <div class="item-controls">
+                            <button class="delete-btn" onclick="deleteItem(this)">×</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="item-controls">
+                    <button class="delete-btn" onclick="deleteItem(this)">×</button>
+                </div>
+            `;
+            if (lastExp) {
+                lastExp.after(newItem);
+            } else {
+                section.appendChild(newItem);
+            }
+            newItem.querySelector('.company').focus();
+            saveCV();
+        }
+
+        // Add new training (Complementary AI Training section)
+        function addTraining() {
+            const sections = document.querySelectorAll('.left-column .section');
+            const trainingSection = sections[sections.length - 1]; // Last section = AI Training
+            const lastItem = trainingSection.querySelector('.experience-item:last-of-type');
+            const newItem = document.createElement('div');
+            newItem.className = 'experience-item editable-item';
+            newItem.innerHTML = `
+                <div class="experience-header">
+                    <div class="company" contenteditable="true">Organisation | Formation</div>
+                    <div class="date" contenteditable="true">Date début – Date fin</div>
+                </div>
+                <ul class="exp-list">
+                    <li contenteditable="true" class="editable-item">Première compétence acquise
+                        <div class="item-controls">
+                            <button class="delete-btn" onclick="deleteItem(this)">×</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="item-controls">
+                    <button class="delete-btn" onclick="deleteItem(this)">×</button>
+                </div>
+            `;
+            if (lastItem) {
+                lastItem.after(newItem);
+            } else {
+                trainingSection.appendChild(newItem);
+            }
+            newItem.querySelector('.company').focus();
+            saveCV();
+        }
+
+        // Add new interest
+        function addInterest() {
+            const sections = document.querySelectorAll('.right-section');
+            const section = sections[sections.length - 1]; // Last section = Interests
+            const lastItem = section.querySelector('.interest-item:last-of-type');
+            const newItem = document.createElement('div');
+            newItem.className = 'interest-item editable-item';
+            newItem.innerHTML = `
+                <i class="fas fa-star"></i>
+                <span contenteditable="true">Nouvel intérêt</span>
+                <div class="item-controls">
+                    <button class="delete-btn" onclick="deleteItem(this)">×</button>
+                </div>
+            `;
+            if (lastItem) {
+                lastItem.after(newItem);
+            } else {
+                section.appendChild(newItem);
+            }
+            newItem.querySelector('span').focus();
+            saveCV();
+        }
+
+        // Add new education
+        function addEducation() {
+            const section = document.querySelector('.right-section'); // First section = Education
+            const lastItem = section.querySelector('.education-item:last-of-type');
+            const newItem = document.createElement('div');
+            newItem.className = 'education-item editable-item';
+            newItem.innerHTML = `
+                <div class="education-year" contenteditable="true">20XX</div>
+                <div class="education-title" contenteditable="true">Nouveau diplôme</div>
+                <div class="education-school" contenteditable="true">École</div>
+                <div class="item-controls">
+                    <button class="delete-btn" onclick="deleteItem(this)">×</button>
+                </div>
+            `;
+            if (lastItem) {
+                lastItem.after(newItem);
+            } else {
+                section.appendChild(newItem);
+            }
+            newItem.querySelector('.education-year').focus();
+            saveCV();
+        }
+
+        // Add new skill
+        function addSkill() {
+            const sections = document.querySelectorAll('.right-section');
+            const section = sections[1]; // Second section = Skills
+            const lastItem = section.querySelector('.skill-item:last-of-type');
+            const newItem = document.createElement('div');
+            newItem.className = 'skill-item editable-item';
+            newItem.innerHTML = `
+                <div class="skill-header">
+                    <div class="skill-name" contenteditable="true">Nouvelle compétence</div>
+                </div>
+                <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                <div class="item-controls">
+                    <button class="delete-btn" onclick="deleteItem(this)">×</button>
+                </div>
+            `;
+            if (lastItem) {
+                lastItem.after(newItem);
+            } else {
+                section.appendChild(newItem);
+            }
+            newItem.querySelector('.skill-name').focus();
+            saveCV();
+        }
+
+        // Switch language
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            const t = translations[lang];
+
+            // Update button states
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
+
+            // Update section titles
+            const sectionTitles = document.querySelectorAll('.section-title');
+            if (sectionTitles[0]) sectionTitles[0].textContent = t.workExperience;
+            if (sectionTitles[1]) sectionTitles[1].textContent = t.complementaryAiTraining;
+
+            const rightSectionTitles = document.querySelectorAll('.right-section-title');
+            if (rightSectionTitles[0]) rightSectionTitles[0].textContent = t.education;
+            if (rightSectionTitles[1]) rightSectionTitles[1].textContent = t.skills;
+            if (rightSectionTitles[2]) rightSectionTitles[2].textContent = t.interests;
+
+            // Update list categories
+            const listCategories = document.querySelectorAll('.list-category');
+            listCategories.forEach(el => {
+                if (el.textContent.includes('Other projects') || el.textContent.includes('Autres projets')) {
+                    el.textContent = t.otherProjects;
+                }
+            });
+
+            // Update skill names for languages
+            const skillNames = document.querySelectorAll('.skill-name');
+            skillNames.forEach(el => {
+                if (el.textContent.includes('French native') || el.textContent.includes('Français natif')) {
+                    el.textContent = t.frenchNative;
+                }
+                if (el.textContent === 'English' || el.textContent === 'Anglais') {
+                    el.textContent = t.english;
+                }
+            });
+
+            // Save language preference
+            localStorage.setItem('cv-language', lang);
+            saveCV();
+        }
+
+        // Load language preference
+        function loadLanguage() {
+            const saved = localStorage.getItem('cv-language');
+            if (saved) {
+                switchLanguage(saved);
+            }
+        }
+
+        // Update skill bar height
+        function updateSkillBarHeight(value) {
+            document.querySelectorAll('.skill-bar').forEach(el => {
+                el.style.height = value + 'px';
+            });
+            document.getElementById('skill-bar-height-value').textContent = value + 'px';
+            localStorage.setItem('cv-skill-bar-height', value);
+            showSaveIndicator();
+        }
+
+        // Load skill bar height
+        function loadSkillBarHeight() {
+            const saved = localStorage.getItem('cv-skill-bar-height');
+            if (saved) {
+                document.getElementById('skill-bar-height').value = saved;
+                updateSkillBarHeight(saved);
+            }
+        }
+
+        // Adjust font size in main content
+        function adjustFontSize(delta) {
+            currentFontScale = Math.max(70, Math.min(130, currentFontScale + (delta * 5)));
+            applyFontScale();
+            localStorage.setItem('cv-font-scale', currentFontScale);
+            showSaveIndicator();
+        }
+
+        // Apply font scale to left column
+        function applyFontScale() {
+            const leftColumn = document.querySelector('.left-column');
+            if (leftColumn) {
+                leftColumn.style.zoom = (currentFontScale / 100);
+            }
+            document.getElementById('font-size-value').textContent = currentFontScale + '%';
+        }
+
+        // Load font scale
+        function loadFontScale() {
+            const saved = localStorage.getItem('cv-font-scale');
+            if (saved) {
+                currentFontScale = parseInt(saved);
+                applyFontScale();
+            }
+        }
+
+        // Change photo
+        function changePhoto(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const photoImg = document.querySelector('.photo');
+                    photoImg.src = e.target.result;
+                    localStorage.setItem('cv-photo', e.target.result);
+                    showSaveIndicator();
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Load photo
+        function loadPhoto() {
+            const saved = localStorage.getItem('cv-photo');
+            if (saved) {
+                document.querySelector('.photo').src = saved;
+            }
+        }
+
+        // Get current CV state
+        function getCurrentState() {
+            return {
+                content: document.querySelector('.cv-container').innerHTML,
+                colors: {
+                    primary: document.getElementById('color-primary').value,
+                    accent: document.getElementById('color-accent').value,
+                    sectionTitle: document.getElementById('color-section-title').value,
+                    dates: document.getElementById('color-dates').value,
+                    headerIcons: document.getElementById('color-header-icons').value,
+                    skillBorder: document.getElementById('color-skill-border').value
+                },
+                fontScale: currentFontScale,
+                skillBarHeight: document.getElementById('skill-bar-height').value,
+                language: currentLanguage,
+                photo: document.querySelector('.photo').src
+            };
+        }
+
+        // Apply CV state
+        function applyState(state) {
+            if (state.content) {
+                document.querySelector('.cv-container').innerHTML = state.content;
+            }
+            if (state.colors) {
+                document.getElementById('color-primary').value = state.colors.primary;
+                document.getElementById('color-accent').value = state.colors.accent;
+                document.getElementById('color-section-title').value = state.colors.sectionTitle;
+                document.getElementById('color-dates').value = state.colors.dates;
+                document.getElementById('color-header-icons').value = state.colors.headerIcons || '#f59e0b';
+                document.getElementById('color-skill-border').value = state.colors.skillBorder || '#4b5563';
+
+                updateColor('primary', state.colors.primary);
+                updateColor('accent', state.colors.accent);
+                updateColor('section-title', state.colors.sectionTitle);
+                updateColor('dates', state.colors.dates);
+                updateColor('header-icons', state.colors.headerIcons || '#f59e0b');
+                updateColor('skill-border', state.colors.skillBorder || '#4b5563');
+            }
+            if (state.fontScale) {
+                currentFontScale = state.fontScale;
+                applyFontScale();
+            }
+            if (state.skillBarHeight) {
+                document.getElementById('skill-bar-height').value = state.skillBarHeight;
+                updateSkillBarHeight(state.skillBarHeight);
+            }
+            if (state.language) {
+                switchLanguage(state.language);
+            }
+            if (state.photo) {
+                document.querySelector('.photo').src = state.photo;
+            }
+            initializeEditing();
+        }
+
+        // Save new profile
+        function saveNewProfile() {
+            const name = prompt('Nom du profil (ex: Business Analyst, Fullstack Dev):');
+            if (name && name.trim()) {
+                const profiles = JSON.parse(localStorage.getItem('cv-profiles') || '{}');
+                profiles[name.trim()] = getCurrentState();
+                localStorage.setItem('cv-profiles', JSON.stringify(profiles));
+                loadProfileList();
+                document.getElementById('profile-select').value = name.trim();
+                showSaveIndicator();
+                alert('Profil "' + name.trim() + '" sauvegardé !');
+            }
+        }
+
+        // Load profile
+        function loadProfile(name) {
+            if (!name) return;
+            const profiles = JSON.parse(localStorage.getItem('cv-profiles') || '{}');
+            if (profiles[name]) {
+                if (confirm('Charger le profil "' + name + '" ? Les modifications non sauvegardées seront perdues.')) {
+                    applyState(profiles[name]);
+                    showSaveIndicator();
+                } else {
+                    document.getElementById('profile-select').value = '';
+                }
+            }
+        }
+
+        // Delete profile
+        function deleteProfile() {
+            const select = document.getElementById('profile-select');
+            const name = select.value;
+            if (!name) {
+                alert('Sélectionne un profil à supprimer.');
+                return;
+            }
+            if (confirm('Supprimer le profil "' + name + '" ?')) {
+                const profiles = JSON.parse(localStorage.getItem('cv-profiles') || '{}');
+                delete profiles[name];
+                localStorage.setItem('cv-profiles', JSON.stringify(profiles));
+                loadProfileList();
+                alert('Profil "' + name + '" supprimé.');
+            }
+        }
+
+        // Load profile list into select
+        function loadProfileList() {
+            const select = document.getElementById('profile-select');
+            const profiles = JSON.parse(localStorage.getItem('cv-profiles') || '{}');
+            select.innerHTML = '<option value="">-- Sélectionner --</option>';
+            Object.keys(profiles).sort().forEach(name => {
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                select.appendChild(option);
+            });
+        }
+
+        // Export all profiles to JSON file
+        function exportProfiles() {
+            const profiles = JSON.parse(localStorage.getItem('cv-profiles') || '{}');
+
+            // Also save current state if not in a profile
+            const exportData = {
+                profiles: profiles,
+                currentState: getCurrentState(),
+                exportDate: new Date().toISOString()
+            };
+
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'cv-profiles-' + new Date().toISOString().slice(0, 10) + '.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            alert('Export réussi ! Fichier téléchargé.');
+        }
+
+        // Import profiles from JSON file
+        function importProfiles(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+
+                        if (data.profiles) {
+                            const existingProfiles = JSON.parse(localStorage.getItem('cv-profiles') || '{}');
+                            const importedCount = Object.keys(data.profiles).length;
+
+                            // Merge profiles (imported profiles overwrite existing with same name)
+                            const mergedProfiles = { ...existingProfiles, ...data.profiles };
+                            localStorage.setItem('cv-profiles', JSON.stringify(mergedProfiles));
+
+                            loadProfileList();
+                            alert('Import réussi ! ' + importedCount + ' profil(s) importé(s).');
+                        } else {
+                            alert('Fichier invalide : aucun profil trouvé.');
+                        }
+                    } catch (err) {
+                        alert('Erreur lors de l\'import : fichier JSON invalide.');
+                    }
+                };
+                reader.readAsText(input.files[0]);
+                input.value = ''; // Reset input
+            }
+        }
+
+        // Update color
+        function updateColor(type, color) {
+            const root = document.documentElement;
+
+            switch(type) {
+                case 'primary':
+                    root.style.setProperty('--primary', color);
+                    // Also update primary-dark (darker version)
+                    root.style.setProperty('--primary-dark', adjustBrightness(color, -30));
+                    // Update header gradient
+                    document.querySelector('.header').style.background =
+                        `linear-gradient(135deg, ${color} 0%, ${adjustBrightness(color, -30)} 100%)`;
+                    break;
+                case 'accent':
+                    root.style.setProperty('--accent', color);
+                    root.style.setProperty('--accent-light', adjustBrightness(color, 80));
+                    break;
+                case 'section-title':
+                    document.querySelectorAll('.section-title').forEach(el => {
+                        el.style.color = color;
+                    });
+                    document.querySelectorAll('.section-title::after').forEach(el => {
+                        el.style.background = `linear-gradient(90deg, ${color} 0%, transparent 100%)`;
+                    });
+                    // Store for pseudo-element
+                    root.style.setProperty('--section-title-color', color);
+                    break;
+                case 'dates':
+                    document.querySelectorAll('.date').forEach(el => {
+                        el.style.color = color;
+                    });
+                    break;
+                case 'skill-border':
+                    document.querySelectorAll('.skill-bar').forEach(el => {
+                        el.style.borderColor = color;
+                    });
+                    break;
+                case 'header-icons':
+                    document.querySelectorAll('.contact-item i, .contact-section i').forEach(el => {
+                        el.style.color = color;
+                    });
+                    break;
+            }
+
+            saveColors();
+            showSaveIndicator();
+        }
+
+        // Adjust color brightness
+        function adjustBrightness(color, amount) {
+            const hex = color.replace('#', '');
+            const r = Math.max(0, Math.min(255, parseInt(hex.substr(0, 2), 16) + amount));
+            const g = Math.max(0, Math.min(255, parseInt(hex.substr(2, 2), 16) + amount));
+            const b = Math.max(0, Math.min(255, parseInt(hex.substr(4, 2), 16) + amount));
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        }
+
+        // Save colors to localStorage
+        function saveColors() {
+            const colors = {
+                primary: document.getElementById('color-primary').value,
+                accent: document.getElementById('color-accent').value,
+                sectionTitle: document.getElementById('color-section-title').value,
+                dates: document.getElementById('color-dates').value,
+                headerIcons: document.getElementById('color-header-icons').value,
+                skillBorder: document.getElementById('color-skill-border').value
+            };
+            localStorage.setItem('cv-colors', JSON.stringify(colors));
+        }
+
+        // Load colors from localStorage
+        function loadColors() {
+            const saved = localStorage.getItem('cv-colors');
+            if (saved) {
+                const colors = JSON.parse(saved);
+                document.getElementById('color-primary').value = colors.primary;
+                document.getElementById('color-accent').value = colors.accent;
+                document.getElementById('color-section-title').value = colors.sectionTitle;
+                document.getElementById('color-dates').value = colors.dates;
+                if (colors.headerIcons) {
+                    document.getElementById('color-header-icons').value = colors.headerIcons;
+                }
+                if (colors.skillBorder) {
+                    document.getElementById('color-skill-border').value = colors.skillBorder;
+                }
+
+                // Apply colors
+                updateColor('primary', colors.primary);
+                updateColor('accent', colors.accent);
+                updateColor('section-title', colors.sectionTitle);
+                updateColor('dates', colors.dates);
+                if (colors.headerIcons) {
+                    updateColor('header-icons', colors.headerIcons);
+                }
+                if (colors.skillBorder) {
+                    updateColor('skill-border', colors.skillBorder);
+                }
+            }
+        }
+
+        // Save to localStorage
+        function saveCV() {
+            localStorage.setItem('cv-content', document.querySelector('.cv-container').innerHTML);
+            showSaveIndicator();
+        }
+
+        // Show save indicator
+        function showSaveIndicator() {
+            const indicator = document.querySelector('.save-indicator');
+            indicator.classList.add('visible');
+            setTimeout(() => indicator.classList.remove('visible'), 2000);
+        }
+
+        // Reset to original
+        function resetCV() {
+            if (confirm('Réinitialiser le CV ? Toutes les modifications seront perdues.')) {
+                localStorage.removeItem('cv-content');
+                localStorage.removeItem('cv-colors');
+                localStorage.removeItem('cv-language');
+                localStorage.removeItem('cv-font-scale');
+                localStorage.removeItem('cv-photo');
+                localStorage.removeItem('cv-skill-bar-height');
+                document.querySelector('.cv-container').innerHTML = originalContent;
+
+                // Reset colors to default
+                document.getElementById('color-primary').value = '#2563eb';
+                document.getElementById('color-accent').value = '#f59e0b';
+                document.getElementById('color-section-title').value = '#2563eb';
+                document.getElementById('color-dates').value = '#4b5563';
+                document.getElementById('color-header-icons').value = '#f59e0b';
+                document.getElementById('color-skill-border').value = '#4b5563';
+                document.getElementById('skill-bar-height').value = '6';
+                document.getElementById('skill-bar-height-value').textContent = '6px';
+
+                // Reset CSS variables
+                const root = document.documentElement;
+                root.style.setProperty('--primary', '#2563eb');
+                root.style.setProperty('--primary-dark', '#1e40af');
+                root.style.setProperty('--accent', '#f59e0b');
+                root.style.setProperty('--accent-light', '#fef3c7');
+
+                // Reset header gradient
+                document.querySelector('.header').style.background =
+                    'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)';
+
+                // Reset section titles, dates, and header icons
+                document.querySelectorAll('.section-title').forEach(el => {
+                    el.style.color = '#2563eb';
+                });
+                document.querySelectorAll('.date').forEach(el => {
+                    el.style.color = '#4b5563';
+                });
+                document.querySelectorAll('.skill-bar').forEach(el => {
+                    el.style.borderColor = '#4b5563';
+                    el.style.height = '6px';
+                });
+                document.querySelectorAll('.contact-item i, .contact-section i').forEach(el => {
+                    el.style.color = '#f59e0b';
+                });
+
+                // Reset language to English
+                document.getElementById('lang-en').classList.add('active');
+                document.getElementById('lang-fr').classList.remove('active');
+                currentLanguage = 'en';
+
+                // Reset font scale
+                currentFontScale = 100;
+                applyFontScale();
+                document.querySelector('.left-column').style.zoom = '';
+
+                // Reset photo
+                document.querySelector('.photo').src = 'Jean-Denis Noir et blanc.jpg';
+
+                initializeEditing();
+            }
+        }
+    </script>
+</body>
+</html>
