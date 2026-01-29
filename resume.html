@@ -327,6 +327,39 @@
             border-radius: 3px;
             overflow: hidden;
             border: 1px solid var(--gray-600);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .skill-bar:hover {
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+        }
+
+        .skill-level-control {
+            display: none;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+            padding: 4px 6px;
+            background: var(--gray-100);
+            border-radius: 4px;
+        }
+
+        .skill-level-control.active {
+            display: flex;
+        }
+
+        .skill-level-control input[type="range"] {
+            flex: 1;
+            height: 4px;
+            cursor: pointer;
+        }
+
+        .skill-level-control span {
+            font-size: 9px;
+            color: var(--gray-600);
+            min-width: 30px;
+            text-align: right;
         }
 
         .skill-level {
@@ -727,7 +760,8 @@
                 border-radius: 0;
             }
             .edit-toolbar,
-            .item-controls {
+            .item-controls,
+            .skill-level-control {
                 display: none !important;
             }
             .left-column {
@@ -1162,6 +1196,9 @@
             // Load skill bar height
             loadSkillBarHeight();
 
+            // Initialize skill bar controls
+            initSkillBarControls();
+
             // Load photo
             loadPhoto();
 
@@ -1380,6 +1417,7 @@
                 section.appendChild(newItem);
             }
             newItem.querySelector('.skill-name').focus();
+            initSkillBarControls();
             saveCV();
         }
 
@@ -1431,6 +1469,68 @@
             const saved = localStorage.getItem('cv-language');
             if (saved) {
                 switchLanguage(saved);
+            }
+        }
+
+        // Initialize skill bar level controls
+        function initSkillBarControls() {
+            document.querySelectorAll('.skill-item').forEach((item, index) => {
+                const skillBar = item.querySelector('.skill-bar');
+                const skillLevel = item.querySelector('.skill-level');
+
+                if (!skillBar || !skillLevel) return;
+
+                // Check if control already exists
+                if (item.querySelector('.skill-level-control')) return;
+
+                // Get current width percentage
+                const currentWidth = skillLevel.style.width || '80%';
+                const currentValue = parseInt(currentWidth);
+
+                // Create control
+                const control = document.createElement('div');
+                control.className = 'skill-level-control';
+                control.innerHTML = `
+                    <input type="range" min="0" max="100" value="${currentValue}"
+                           onchange="updateSkillLevel(this, ${index})"
+                           oninput="this.nextElementSibling.textContent = this.value + '%'">
+                    <span>${currentValue}%</span>
+                `;
+
+                // Insert after skill-bar
+                skillBar.after(control);
+
+                // Toggle control on click
+                skillBar.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    // Close other controls
+                    document.querySelectorAll('.skill-level-control.active').forEach(c => {
+                        if (c !== control) c.classList.remove('active');
+                    });
+                    control.classList.toggle('active');
+                });
+            });
+
+            // Close controls when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.skill-item')) {
+                    document.querySelectorAll('.skill-level-control.active').forEach(c => {
+                        c.classList.remove('active');
+                    });
+                }
+            });
+        }
+
+        // Update individual skill level
+        function updateSkillLevel(input, index) {
+            const value = input.value;
+            const skillItems = document.querySelectorAll('.skill-item');
+            if (skillItems[index]) {
+                const skillLevel = skillItems[index].querySelector('.skill-level');
+                if (skillLevel) {
+                    skillLevel.style.width = value + '%';
+                    saveCV();
+                }
             }
         }
 
@@ -1555,6 +1655,7 @@
                 document.querySelector('.photo').src = state.photo;
             }
             initializeEditing();
+            initSkillBarControls();
         }
 
         // Save new profile
@@ -1843,6 +1944,7 @@
                 document.querySelector('.photo').src = 'Jean-Denis Noir et blanc.jpg';
 
                 initializeEditing();
+                initSkillBarControls();
             }
         }
     </script>
